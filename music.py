@@ -1,8 +1,8 @@
 import pygame
 
-music_file1 = "sounds/bass.wav"
-music_file2 = "sounds/drums.wav"
-music_file3 = "sounds/guitar.wav"
+music_file1 = "bass.wav"
+music_file2 = "drums.wav"
+music_file3 = "guitar.wav"
 
 # set up the mixer
 freq = 44100  # audio CD quality

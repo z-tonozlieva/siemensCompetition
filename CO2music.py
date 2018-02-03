@@ -20,9 +20,9 @@ with open('5s res sensor_id=BMS-L1O14S33&start=2017-03-20T00_00_00&end=2017-03-2
 
 
 
-music_file1 = "sounds/bass.wav"
-music_file2 = "sounds/drums.wav"
-music_file3 = "sounds/guitar.wav"
+music_file1 = "bass.wav"
+music_file2 = "drums.wav"
+music_file3 = "guitar.wav"
 
 freq = 44100  # audio CD quality
 bitsize = -16  # unsigned 16 bit
