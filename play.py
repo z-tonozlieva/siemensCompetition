@@ -7,7 +7,7 @@ def checkifComplete(channel):
 
 if __name__ == "__main__":
 
-    music_file1 = "bass.wav"
+    music_file1 = "drums.wav"
     music_file2 = "guitar.wav"
 
 
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     checkifComplete(myChannel1) #Check if Audio1 complete
 
     #Add Audio to second channel
-    myAudio2.set_volume(0.2)    # Reduce volume of first audio to 20%
+    myAudio2.set_volume(0.6)    # Reduce volume of first audio to 20%
     print "Playing audio : ", music_file2
     myChannel2.play(myAudio2)
     checkifComplete(myChannel2)
