@@ -32,10 +32,5 @@ if __name__ == "__main__":
     myAudio1.set_volume(0.8) # Reduce volume of first audio to 80%
     print "Playing audio : ", music_file1
     myChannel1.play(myAudio1)
-    checkifComplete(myChannel1) #Check if Audio1 complete
-
-    #Add Audio to second channel
-    myAudio2.set_volume(0.6)    # Reduce volume of first audio to 20%
-    print "Playing audio : ", music_file2
     myChannel2.play(myAudio2)
-    checkifComplete(myChannel2)
+    
