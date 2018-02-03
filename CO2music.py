@@ -19,12 +19,6 @@ with open('5s res sensor_id=BMS-L1O14S33&start=2017-03-20T00_00_00&end=2017-03-2
     thirdPart = False
 
 
-def checkifComplete(channel):
-    while channel.get_busy():  # Check if Channel is busy
-        pygame.time.wait(800)  # wait in ms
-
-
-channel.stop()
 
 music_file1 = "sounds/bass.wav"
 music_file2 = "sounds/drums.wav"

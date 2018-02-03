@@ -1,12 +1,6 @@
-import pygame
-def checkifComplete(channel):
-        while channel.get_busy():  #Check if Channel is busy
-          pygame.time.wait(800)  #  wait in ms
-     channel.stop()             
-
-    if __name__ == "__main__":
-        music_file1 = "sounds/bass.wav"
-        music_file2 = "sounds/drums.wav"
+    music_file1 = "sounds/bass.wav"
+    music_file2 = "sounds/drums.wav"
+    music_file3 = "sounds/guitar.wav"
 
 
     #set up the mixer
