@@ -1,3 +1,4 @@
+import pygame
 def checkifComplete(channel):
         while channel.get_busy():  #Check if Channel is busy
           pygame.time.wait(800)  #  wait in ms
