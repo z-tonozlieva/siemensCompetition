@@ -3,9 +3,9 @@ from time import sleep
 import json
 
 with open('AHU06 Heating Coil.json') as json_data:
-    d = json.load(json_data)
-    name = d['name']
-    values = d['values']
+    t = json.load(json_data)
+    name = t['name']
+    values = t['values']
         
 GPIO.setmode(GPIO.BOARD)
 stepPin = 11
@@ -19,10 +19,10 @@ try:
             print(value['value'])
             if (float(value['value']) < 500.0) :
                 GPIO.output(stepPin, GPIO.LOW)
-                sleep(0.00001)
+                sleep(4)
             else :
                 GPIO.output(stepPin, GPIO.HIGH)
-                sleep(0.01)
+                sleep(4)
 except KeyboardInterrupt:
     print("Stop")
 GPIO.cleanup()
