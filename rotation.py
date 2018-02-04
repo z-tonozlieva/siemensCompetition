@@ -9,7 +9,7 @@ GPIO.setup(dir, GPIO.LOW)
 try:
     while True:
         GPIO.output(stepPin, GPIO.LOW)
-        sleep(0.0005)
+        sleep(0.00001)
         GPIO.output(stepPin, GPIO.HIGH)
         sleep(0.01)
 except KeyboardInterrupt:

@@ -19,7 +19,7 @@ try:
             print(value['value'])
             if (float(value['value']) < 500.0) :
                 GPIO.output(stepPin, GPIO.LOW)
-                sleep(0.0005)
+                sleep(0.00001)
             else :
                 GPIO.output(stepPin, GPIO.HIGH)
                 sleep(0.01)
