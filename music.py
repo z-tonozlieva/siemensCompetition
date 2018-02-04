@@ -1,4 +1,5 @@
 import pygame
+import time
 
 def checkifComplete(channel):
     while channel.get_busy():  #Check if Channel is busy
@@ -33,9 +34,12 @@ print
 "Playing audio : ", music_file1
 myChannel1.play(myAudio1)
 
-
+time.sleep(10)
+myChannel1.stop()
 # Add Audio to second channel
 myAudio2.set_volume(0.6)
 print
 "Playing audio : ", music_file2
 myChannel2.play(myAudio2)
+time.sleep(10)
+myChannel2.stop()
