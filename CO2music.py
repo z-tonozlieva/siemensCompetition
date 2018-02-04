@@ -48,7 +48,7 @@ myChannel2 = pygame.mixer.Channel(2)
 myChannel3 = pygame.mixer.Channel(3)
 
 for value in values:
-    if float(value['value']) <= 450.0:
+    if float(value['value']) <= 500.0:
         myChannel2.stop()
         secondPart = False
         myChannel3.stop()
@@ -58,7 +58,7 @@ for value in values:
             "Playing audio : ", music_file1
             myChannel1.play(myAudio1)
 
-    elif (float(value['value']) > 450.0) and (float(value['value']) < 600.0) :
+    elif (float(value['value']) > 500.0) and (float(value['value']) < 600.0) :
         myChannel3.stop()
         thirdPart = False
         if not secondPart or not myChannel2.get_busy() :
