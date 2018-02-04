@@ -1,8 +1,14 @@
 import pygame
 
-music_file1 = "bass.wav"
-music_file2 = "drums.wav"
-music_file3 = "guitar.wav"
+def checkifComplete(channel):
+    while channel.get_busy():  #Check if Channel is busy
+        pygame.time.wait(800)  #  wait in ms
+    channel.stop()             #Stop channel
+
+if __name__ == "__main__":
+	music_file1 = "bass.wav"
+	music_file2 = "drums.wav"
+	music_file3 = "guitar.wav"
 
 # set up the mixer
 freq = 44100  # audio CD quality

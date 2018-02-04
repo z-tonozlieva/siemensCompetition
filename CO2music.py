@@ -53,24 +53,24 @@ for value in values:
         secondPart = False
         myChannel3.stop()
         thirdPart = False
-        if firstPart == False:
+        if not firstPart or not myChannel1.get_busy():
             firstPart = True
+            "Playing audio : ", music_file1
             myChannel1.play(myAudio1)
-            checkifComplete(myChannel1)
 
     elif (float(value['value']) > 450.0) and (float(value['value']) < 600.0) :
         myChannel3.stop()
         thirdPart = False
-        if (secondPart == False) :
+        if not secondPart or not myChannel2.get_busy() :
             secondPart = True
+            "Playing audio : ", music_file2
             myChannel2.play(myAudio2)
-            checkifComplete(myChannel2)
 
     else:
-        if thirdPart == False :
+        if not thirdPart or not myChannel3.get_busy() :
             thirdPart = True
+            "Playing audio : ", music_file3
             myChannel3.play(myAudio3)
-            checkifComplete(myChannel3)
 
     print(value['value'])
     time.sleep(5)
