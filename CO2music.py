@@ -18,9 +18,12 @@ def checkifComplete(channel):
     channel.stop()             #Stop channel
 
 if __name__ == "__main__":
-    music_file1 = "1-Morning-Edvard-Grieg.wav"
-    music_file2 = "2-Erik-Satie-Gymnop_die-No_1.wav"
-    music_file3 = "3-Camille-Saint-Sa_ns-Danse-Macabre.wav"
+    music_file1 = "guitar.wav"
+    music_file2 = "drums.wav"
+    music_file3 = "bass.wav"
+    music_file11 = "1-Morning-Edvard-Grieg.wav"
+    music_file22 = "2-Erik-Satie-Gymnop_die-No_1.wav"
+    music_file33 = "3-Camille-Saint-Sa_ns-Danse-Macabre.wav"
     music_file4 = "4-Richard-Wagner-Ride-Of-The-Valkyries.wav"
     music_file5 = "5-Mozart-The-Marriage-of-Figaro.wav"
     music_file6 = "6-Grieg-In-the-Hall-of-the-Mountain-King.wav"
