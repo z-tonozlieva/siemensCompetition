@@ -7,26 +7,28 @@ with open('5s res sensor_id=BMS-L1O14S33&start=2017-03-20T00_00_00&end=2017-03-2
     data = d['id']
     name = d['name']
     values = d['values']
-    print(id)
-
-    max = 0.0
-    min = 999.0
-    sum = 0.0
-    count = 0
 
     firstPart = False
     secondPart = False
     thirdPart = False
 
+def checkifComplete(channel):
+    while channel.get_busy():  #Check if Channel is busy
+        pygame.time.wait(800)  #  wait in ms
+    channel.stop()             #Stop channel
 
+if __name__ == "__main__":
+    music_file1 = "1-Morning-Edvard-Grieg.wav"
+    music_file2 = "2-Erik-Satie-Gymnop_die-No_1.wav"
+    music_file3 = "3-Camille-Saint-Sa_ns-Danse-Macabre.wav"
+    music_file4 = "4-Richard-Wagner-Ride-Of-The-Valkyries.wav"
+    music_file5 = "5-Mozart-The-Marriage-of-Figaro.wav"
+    music_file6 = "6-Grieg-In-the-Hall-of-the-Mountain-King.wav"
 
-music_file1 = "bass.wav"
-music_file2 = "drums.wav"
-music_file3 = "guitar.wav"
-
+# set up the mixer
 freq = 44100  # audio CD quality
 bitsize = -16  # unsigned 16 bit
-channels = 2  # 1 is mono, 2 is stereo
+channels = 3  # 1 is mono, 2 is stereo
 buffer = 2048  # number of samples (experiment to get right sound)
 pygame.mixer.init(freq, bitsize, channels, buffer)
 
@@ -43,14 +45,11 @@ myChannel2 = pygame.mixer.Channel(2)
 myChannel3 = pygame.mixer.Channel(3)
 
 for value in values:
-    if (max < float(value['value'])): max = float(value['value'])
-    if (min > float(value['value'])): min = float(value['value'])
-    sum += float(value['value'])
-    count += 1
     if float(value['value']) <= 450.0:
         if firstPart == False:
             firstPart = True
             myChannel1.play(myAudio1)
+            checkifComplete(myChannel1)
         myChannel2.stop()
         secondPart = False
         myChannel3.stop()
@@ -59,19 +58,17 @@ for value in values:
         if (secondPart == False) :
             secondPart = True
             myChannel2.play(myAudio2)
+            checkifComplete(myChannel2)
         myChannel3.stop()
         thirdPart = False
     else:
         if thirdPart == False :
             thirdPart = True
             myChannel3.play(myAudio3)
+            checkifComplete(myChannel3)
 
     print(value['value'])
-    time.sleep(10)
+    time.sleep(5)
 
 print("---------")
 print(name)
-print(d['type'])
-print("max", max)
-print("min", min)
-print("average", float(sum / count))
